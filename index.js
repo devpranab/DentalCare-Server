@@ -66,15 +66,36 @@ async function run() {
       const decodedEmail = req.decoded.email;
 
       if (email !== decodedEmail) {
-          return res.status(403).send({ message: 'Forbidden Access.' })
+        return res.status(403).send({ message: 'Forbidden Access.' })
       }
 
       const query = { email: email }
       const bookings = await bookingsCollection.find(query).toArray()
       res.send(bookings);
-  })
+    })
 
     //Get bookings by id
+    //Delete bookings
+
+    //Get appointmentOptions
+    //Get appointmentSpeciality
+
+    //Post users
+    //Post users by id
+    //Get users
+
+    //Get jwt
+
+    //Post create-payment-intent
+    //Post payments
+
+    //get users/admin/:email
+    //put users/admin/:id
+    //delete users/admin/:id
+
+    //Get doctors
+    //Post doctors
+    //Delete doctors
 
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
@@ -96,7 +117,7 @@ app.listen(port, () => {
 //localhost:5000
 
 /*
-   * API Naming Convention 
+   * API Naming Convention
    * app.get('/bookings')
    * app.get('/bookings/:id')
    * app.post('/bookings')
